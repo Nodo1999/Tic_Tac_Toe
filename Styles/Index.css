@@ -1,0 +1,262 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url(../Fonts/Roboto/Roboto-Regular.ttf);
+}
+
+@font-face {
+    font-family: Lato;
+    src: url(../Fonts/Lato/Lato-Regular.ttf);
+}
+
+body {
+    background-color: #cb9b9b;
+}
+
+.main-div, .game-div, .result-div {
+    background-color: #efeada;
+    border-radius: 20px;
+    padding: 15px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+}
+
+.main-div {
+    width: 400px;
+    height: 300px;
+}
+
+.main-div.hide {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.9);
+}
+
+.game-div {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.9);
+    width: 400px;
+    height: 400px;
+}
+
+.game-div.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.turns.active p:first-child {
+    background-color: #dfcd297e;
+}
+
+.turns.active p:nth-child(2) {
+    background-color:  #dfcd297e;
+}
+
+.turns.active .slider {
+    left: 50%;
+}
+
+.result-div {
+    width: 400px;
+    height: 300px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.9);
+}
+
+.result-div.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+h1 {
+    font-family: Lato;
+    font-weight: 800;
+    font-size: 44px;
+    line-height: 70px;
+    color: #302a3a;
+    border-bottom: 1px solid #302a3a;
+}
+
+h2 {
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 50px;
+    padding: 10px 0;
+    color: #302a3a;
+    margin-top: 50px;
+}
+
+.player-opt button {
+    font-family: Roboto;
+    font-size: 18px;
+    width: 110px;
+    height: 40px;
+    background-color: #7fbaaa;
+    border-color: #efeada;
+    border-radius: 7px;
+    color:#302a3a;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 5px;
+}
+
+.player-opt button:hover {
+    color: #efeada;
+    background-color: #dfce29;
+    transform: scale(1.1);
+}
+
+.turns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.X-turn, .O-turn {
+    font-family: Roboto;
+    font-size: 24px;
+    width: 200px;
+    height: 50px;
+    background-color: #dfcd297e;
+    border-radius: 7px;
+    color: #efeada;
+    text-align: center;
+    padding: 10px;
+    margin: 0px 5px 5px;
+}
+
+.game-div section {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.first {
+    margin-top: 5px;
+}
+
+.game-div section div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100px;
+    width: 100px;
+    background-color: #7fbaaa;
+    margin: 3px;
+    font-family: Lato;
+    font-size: 60px;
+    text-align: center;
+    line-height: 100px;
+    color: #efeada;
+    border-radius: 10px;
+}
+
+.game-div .turns p {
+    cursor: default;
+    position: relative;
+    z-index: 5;
+    transition: all 0.3s ease;
+}
+
+.turns p:first-child {
+   background-color: #dfcd297e;
+}
+
+.turns .slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 50%;
+    background-color: #dfce29;
+    border-radius: 7px;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+h3 {
+    display: flex;
+    font-family: Lato;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 30px;
+    color: #302a3a;
+    margin-top: 70px;
+    justify-content: center;
+}
+
+h3 p {
+    font-weight: 900;
+    font-size: 34px;
+    margin: 0 13px;
+}
+
+.again button {
+    font-family: Roboto;
+    font-size: 28px;
+    width: 170px;
+    height: 55px;
+    background-color: #7fbaaa;
+    border-color: #efeada;
+    border-radius: 7px;
+    color:#302a3a;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    margin: 40px 0;
+    padding: 5px;
+}
+
+.again button:hover {
+    color: #efeada;
+    background-color: #dfce29;
+    transform: scale(1.2);
+}
+
+@media only screen and (min-width:320px) and (max-width: 480px) {
+    .main-div {
+        width: 300px;
+        height: 300px;
+    }
+
+    .game-div {
+        width: 300px;
+        height: 350px;
+    }
+
+    .game-div section div {
+        height: 80px;
+        width: 80px;
+        font-size: 50px;
+        line-height: 80px;
+    }
+
+    .result-div {
+        width: 300px;
+        height: 300px;
+    }
+
+    h3 {
+        font-size: 20px;
+        line-height: 22px;
+    }
+
+    h3 p {
+        font-size: 22px;
+        margin: 0 10px;
+    }
+}
